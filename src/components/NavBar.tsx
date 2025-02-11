@@ -14,6 +14,9 @@ function NavBar() {
         <li>
           <Link to="/about">Sobre</Link>
         </li>
+        <li>
+          <Link to={"/resources"}>Recursos</Link>
+        </li>
       </ul>
     </nav>
   );
