@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar";
 import Resources from "./pages/Resources";
 import Stories from "./pages/Stories";
 import Tips from "./pages/Tips";
+import Feedback from "./pages/Feedback";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/resources" element={<Resources />} />
         <Route path="/stories" element={<Stories />} />
         <Route path="/tips" element={<Tips />} />
+        <Route path="/feedback" element={<Feedback />} />
       </Routes>
     </BrowserRouter>
   );
