@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
-function NavBar() {
+interface NavBarProps {
+  toggleTheme: () => void;
+  theme: string;
+}
+
+function NavBar({ toggleTheme, theme }: NavBarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -57,6 +62,9 @@ function NavBar() {
           </Link>
         </li>
       </ul>
+      <button onClick={toggleTheme} className="theme-toggle">
+        {theme === "dark" ? "Modo Claro" : "Modo Escuro"}
+      </button>
     </nav>
   );
 }

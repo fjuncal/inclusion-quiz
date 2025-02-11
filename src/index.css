@@ -2,24 +2,10 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -27,9 +13,27 @@ body {
   min-width: 320px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+body.theme-dark {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+body.theme-light {
+  background-color: #ffffff;
+  color: #213547;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+body.theme-dark a {
+  color: #646cff;
+}
+
+body.theme-light a {
+  color: #646cff;
 }
 
 button {
@@ -39,27 +43,33 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+body.theme-dark button {
+  background-color: #1a1a1a;
+  color: #fff;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body.theme-light button {
+  background-color: #f9f9f9;
+  color: #213547;
+}
+
+.theme-toggle {
+  margin-left: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+body.theme-dark .theme-toggle:hover {
+  background-color: #646cff;
+}
+
+body.theme-light .theme-toggle:hover {
+  background-color: #e0e0e0;
 }
