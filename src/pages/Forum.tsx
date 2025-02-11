@@ -48,8 +48,7 @@ function Forum() {
   };
 
   const handleModalConfirm = (password: string) => {
-    // Substitua "minhaSenhaSecreta" pela senha desejada
-    if (password === "minhaSenhaSecreta") {
+    if (password === "7778") {
       setComments([]);
       localStorage.removeItem("forumComments");
       setIsModalOpen(false);
