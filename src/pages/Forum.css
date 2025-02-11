@@ -1,0 +1,73 @@
+/* Forum.css (estilos atuais) */
+.forum-container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.comment-form input,
+.comment-form textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.comment-form button {
+  width: 150px;
+  padding: 0.5rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.comment-form button:hover {
+  background-color: #646cff;
+}
+
+.comments-list .comment {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Estilos para o modo escuro */
+body.theme-dark .forum-container {
+  background-color: #121212; /* Fundo geral para o container */
+  color: #e0e0e0;
+}
+
+body.theme-dark .comment-form input,
+body.theme-dark .comment-form textarea {
+  background-color: #333; /* Fundo escuro para os campos */
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
+
+body.theme-dark .comment-form button {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.theme-dark .comment-form button:hover {
+  background-color: #646cff; /* Pode manter o hover se preferir */
+}
+
+body.theme-dark .comments-list .comment {
+  background-color: #333; /* Fundo para cada comentário */
+  color: #e0e0e0;
+  border: 1px solid #555;
+}
