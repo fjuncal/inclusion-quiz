@@ -1,4 +1,3 @@
-// Forum.tsx
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "./Forum.css";
@@ -36,7 +35,6 @@ function Forum() {
     setComments([newComment, ...comments]);
     setName("");
     setText("");
-    // Notifica que o comentário foi enviado com sucesso
     toast.success("Comentário enviado com sucesso!");
   };
 
@@ -59,6 +57,7 @@ function Forum() {
       toast.info("Comentários limpos!");
     } else {
       setModalError("Senha incorreta. Tente novamente.");
+      toast.error("Senha incorreta. Tente novamente.");
     }
   };
 
