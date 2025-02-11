@@ -1,30 +1,60 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 function NavBar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      <ul>
+      <div className="navbar-header">
+        <button className="mobile-menu-button" onClick={toggleMobileMenu}>
+          ☰
+        </button>
+      </div>
+      <ul className={`navbar-menu ${isMobileMenuOpen ? "active" : ""}`}>
         <li>
-          <Link to="/">Início</Link>
+          <Link to="/" onClick={handleLinkClick}>
+            Início
+          </Link>
         </li>
         <li>
-          <Link to="/quiz">Quiz</Link>
+          <Link to="/quiz" onClick={handleLinkClick}>
+            Quiz
+          </Link>
         </li>
         <li>
-          <Link to="/about">Sobre</Link>
+          <Link to="/about" onClick={handleLinkClick}>
+            Sobre
+          </Link>
         </li>
         <li>
-          <Link to={"/resources"}>Recursos</Link>
+          <Link to="/resources" onClick={handleLinkClick}>
+            Recursos
+          </Link>
         </li>
         <li>
-          <Link to={"/stories"}>Histórias</Link>
+          <Link to="/stories" onClick={handleLinkClick}>
+            Histórias
+          </Link>
         </li>
         <li>
-          <Link to={"/tips"}>Dicas</Link>
+          <Link to="/tips" onClick={handleLinkClick}>
+            Dicas
+          </Link>
         </li>
         <li>
-          <Link to={"/feedback"}>Feedback</Link>
+          <Link to="/feedback" onClick={handleLinkClick}>
+            Feedback
+          </Link>
         </li>
       </ul>
     </nav>
