@@ -39,17 +39,12 @@ Para executar a aplicação localmente:
    git clone https://github.com/seu-usuario/inclusion-quiz.git
    cd inclusion-quiz
    Instale as dependências:
+   npm install
+   Inicie a aplicação:
+   npm run dev
    ```
 
-```bash
-npm install
-Inicie a aplicação:
-```
-
-```bash
-npm run dev
 Abra http://localhost:3000 no seu navegador para acessar a aplicação.
-```
 
 Estrutura do Projeto
 src/
