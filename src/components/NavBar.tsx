@@ -61,6 +61,9 @@ function NavBar({ toggleTheme, theme }: NavBarProps) {
             Feedback
           </Link>
         </li>
+        <li>
+          <Link to="/timeline">Linha do Tempo</Link>
+        </li>
       </ul>
       <button onClick={toggleTheme} className="theme-toggle">
         {theme === "dark" ? "Modo Claro" : "Modo Escuro"}

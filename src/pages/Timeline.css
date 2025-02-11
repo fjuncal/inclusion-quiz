@@ -1,0 +1,79 @@
+/* Timeline.css */
+.timeline-container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ccc;
+}
+
+.timeline-event {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-event:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-event:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-event:before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #646cff;
+  border: 2px solid #fff;
+  z-index: 1;
+}
+
+.timeline-event:nth-child(odd):before {
+  right: -6px;
+}
+
+.timeline-event:nth-child(even):before {
+  left: -6px;
+}
+
+.timeline-date {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  background: #f9f9f9;
+  color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.theme-dark .timeline-content {
+  background: #333;
+  color: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
