@@ -3,27 +3,28 @@ import { Link } from "react-router-dom";
 function VideoSection() {
   return (
     <div style={{ padding: "1rem" }}>
-      <h1>Welcome to the Inclusion Quiz</h1>
+      <h1>Bem-vindo(a) ao Quiz de Inclusão</h1>
       <p>
-        Here, you'll learn about diversity, inclusion, and the challenges faced
-        by minority groups in tech. Watch the video below to get started.
+        Aqui você vai aprender sobre diversidade, inclusão e os desafios
+        enfrentados por grupos minoritários na área de tecnologia. Assista ao
+        vídeo abaixo para começar.
       </p>
 
-      {/* Exemplo de iframe embutindo um vídeo do YouTube */}
+      {/* Exemplo de iframe com um vídeo (troque pela URL de um vídeo sobre inclusão) */}
       <iframe
         width="560"
         height="315"
         src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        title="Educational Video"
+        title="Vídeo Educativo"
         allowFullScreen
       />
 
       <div style={{ marginTop: "1rem" }}>
         <p>
-          After watching the video, click below to start the quiz and test your
-          knowledge.
+          Depois de assistir ao vídeo, clique no botão abaixo para iniciar o
+          quiz e testar seus conhecimentos.
         </p>
-        <Link to="/quiz">Start Quiz</Link>
+        <Link to="/quiz">Iniciar Quiz</Link>
       </div>
     </div>
   );

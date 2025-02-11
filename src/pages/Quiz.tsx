@@ -11,15 +11,24 @@ interface Question {
 function Quiz() {
   const questions: Question[] = [
     {
-      questionText: "Which group is underrepresented in tech?",
+      questionText: "Qual grupo é sub-representado na área de tecnologia?",
       answerOptions: [
-        { answerText: "Women and minorities", isCorrect: true },
-        { answerText: "Everyone is equally represented", isCorrect: false },
-        { answerText: "None", isCorrect: false },
-        { answerText: "Men in general", isCorrect: false },
+        { answerText: "Mulheres e minorias", isCorrect: true },
+        { answerText: "Homens em geral", isCorrect: false },
+        { answerText: "Ninguém é sub-representado", isCorrect: false },
+        { answerText: "Somente idosos", isCorrect: false },
       ],
     },
-    // Adicione mais perguntas aqui
+    {
+      questionText: "A diversidade em equipes de tecnologia pode gerar:",
+      answerOptions: [
+        { answerText: "Melhor criatividade e inovação", isCorrect: true },
+        { answerText: "Mais conflitos sem benefícios", isCorrect: false },
+        { answerText: "Queda de produtividade", isCorrect: false },
+        { answerText: "Nenhuma diferença significativa", isCorrect: false },
+      ],
+    },
+    // Adicione mais perguntas conforme quiser
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
@@ -40,23 +49,22 @@ function Quiz() {
 
   return (
     <div style={{ padding: "1rem" }}>
-      <h1>Inclusion Quiz</h1>
+      <h1>Quiz de Inclusão</h1>
       {showScore ? (
         <div>
           <p>
-            You scored {score} out of {questions.length}
+            Você acertou {score} de {questions.length} perguntas.
           </p>
-          {/* Mensagem de conscientização */}
           <p>
-            Remember, diversity and inclusion are essential for innovation in
-            technology!
+            Lembre-se de que diversidade e inclusão são fundamentais para a
+            inovação na tecnologia!
           </p>
         </div>
       ) : (
         <>
           <div>
             <p>
-              Question {currentQuestion + 1}/{questions.length}
+              Pergunta {currentQuestion + 1}/{questions.length}
             </p>
             <p>{questions[currentQuestion].questionText}</p>
           </div>
