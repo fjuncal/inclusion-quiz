@@ -5,6 +5,7 @@ import Quiz from "./pages/Quiz";
 import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import Resources from "./pages/Resources";
+import Stories from "./pages/Stories";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/about" element={<About />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/stories" element={<Stories />} />
       </Routes>
     </BrowserRouter>
   );
