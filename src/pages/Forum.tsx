@@ -1,5 +1,6 @@
 // Forum.tsx
 import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import "./Forum.css";
 import ClearCommentsModal from "../components/ClearCommentsModal";
 
@@ -35,6 +36,8 @@ function Forum() {
     setComments([newComment, ...comments]);
     setName("");
     setText("");
+    // Notifica que o comentário foi enviado com sucesso
+    toast.success("Comentário enviado com sucesso!");
   };
 
   const handleClearComments = () => {
@@ -48,11 +51,12 @@ function Forum() {
   };
 
   const handleModalConfirm = (password: string) => {
-    if (password === "7778") {
+    if (password === "777") {
       setComments([]);
       localStorage.removeItem("forumComments");
       setIsModalOpen(false);
       setModalError("");
+      toast.info("Comentários limpos!");
     } else {
       setModalError("Senha incorreta. Tente novamente.");
     }
