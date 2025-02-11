@@ -61,16 +61,20 @@ npm install
 npm run
 ```
 
-Abra http://localhost:3000 no seu navegador para acessar a aplicação.
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para acessar a aplicação.
 
-Estrutura do Projeto
-src/
-components/ – Componentes reutilizáveis (ex: NavBar, ClearCommentsModal).
-pages/ – Páginas principais (ex: VideoSection, Quiz, Forum, etc.).
-utils/ – Dados e funções auxiliares (ex: perguntas do quiz).
-public/ – Arquivos públicos, como index.html.
-Contribuição
+**Estrutura do Projeto:**
+
+- **src/**
+  - **components/** – Componentes reutilizáveis (ex: NavBar, ClearCommentsModal).
+  - **pages/** – Páginas principais (ex: VideoSection, Quiz, Forum, etc.).
+  - **utils/** – Dados e funções auxiliares (ex: perguntas do quiz).
+- **public/** – Arquivos públicos, como `index.html`.
+
+**Contribuição**
+
 Contribuições são bem-vindas! Se você deseja colaborar, sinta-se à vontade para abrir issues ou enviar pull requests.
 
-Licença
-Este projeto está licenciado sob a Licença MIT.
+**Licença**
+
+Este projeto está licenciado sob a [Licença MIT](./LICENSE).
