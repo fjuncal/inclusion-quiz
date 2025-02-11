@@ -1,0 +1,35 @@
+.quiz-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.question-container {
+  margin-bottom: 1.5rem;
+}
+
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os botões horizontalmente */
+  gap: 0.5rem; /* Espaço entre os botões */
+}
+
+.answer-button {
+  padding: 0.6rem 1.2rem;
+  width: 80%;
+  max-width: 300px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.answer-button:hover {
+  border-color: #646cff;
+  background-color: #646cff;
+  color: #1a1a1a;
+}

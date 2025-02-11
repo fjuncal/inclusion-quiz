@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./Quiz.css"; // Certifique-se de que o caminho está correto
 
 interface Question {
   questionText: string;
@@ -28,7 +29,7 @@ function Quiz() {
         { answerText: "Nenhuma diferença significativa", isCorrect: false },
       ],
     },
-    // Adicione mais perguntas conforme quiser
+    // Adicione mais perguntas conforme desejar
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState<number>(0);
@@ -48,7 +49,7 @@ function Quiz() {
   };
 
   return (
-    <div style={{ padding: "1rem" }}>
+    <div className="quiz-container">
       <h1>Quiz de Inclusão</h1>
       {showScore ? (
         <div>
@@ -62,13 +63,13 @@ function Quiz() {
         </div>
       ) : (
         <>
-          <div>
+          <div className="question-container">
             <p>
               Pergunta {currentQuestion + 1}/{questions.length}
             </p>
             <p>{questions[currentQuestion].questionText}</p>
           </div>
-          <div>
+          <div className="answers-container">
             {questions[currentQuestion].answerOptions.map(
               (answerOption, index) => (
                 <button
@@ -76,7 +77,7 @@ function Quiz() {
                   onClick={() =>
                     handleAnswerOptionClick(answerOption.isCorrect)
                   }
-                  style={{ display: "block", margin: "0.5rem 0" }}
+                  className="answer-button"
                 >
                   {answerOption.answerText}
                 </button>
