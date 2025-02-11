@@ -59,12 +59,10 @@
 }
 
 .comment-reactions {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
   display: flex;
   align-items: center;
   gap: 4px;
+  margin-top: 0.5rem;
 }
 
 .like-button {
@@ -83,6 +81,50 @@
 
 .like-count {
   font-size: 1rem;
+}
+
+.reply-button {
+  background: transparent;
+  border: none;
+  color: #646cff;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.reply-form {
+  margin-top: 1rem;
+  border-top: 1px dashed #ccc;
+  padding-top: 1rem;
+}
+
+.reply-form .reply-input,
+.reply-form .reply-textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.submit-reply-button {
+  padding: 0.5rem 1rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-reply-button:hover {
+  background-color: #646cff;
+}
+
+.replies {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  border-left: 2px solid #ccc;
+  padding-left: 1rem;
 }
 
 body.theme-dark .forum-container {
@@ -121,6 +163,26 @@ body.theme-dark .comments-list .comment {
   color: #e0e0e0;
 }
 
-body.theme-dark .like-button {
-  color: #fff;
+body.theme-dark .reply-button {
+  color: #aaa;
+}
+
+body.theme-dark .reply-form .reply-input,
+body.theme-dark .reply-form .reply-textarea {
+  background-color: #444;
+  color: #e0e0e0;
+  border: 1px solid #666;
+}
+
+body.theme-dark .submit-reply-button {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+body.theme-dark .submit-reply-button:hover {
+  background-color: #646cff;
+}
+
+body.theme-dark .replies {
+  border-left: 2px solid #555;
 }
