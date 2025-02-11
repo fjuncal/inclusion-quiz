@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { questions } from "../utils/questions";
 import "./Quiz.css";
 
@@ -11,12 +12,16 @@ function Quiz() {
   );
 
   const handleAnswerOptionClick = (isCorrect: boolean, index: number) => {
+    // Evita múltiplos cliques
     if (selectedAnswerIndex !== null) return;
 
     setSelectedAnswerIndex(index);
 
     if (isCorrect) {
       setScore((prev) => prev + 1);
+      toast.success("✅"); // Exibe emoji de marca para resposta correta
+    } else {
+      toast.error("❌"); // Exibe emoji de X para resposta incorreta
     }
 
     setTimeout(() => {
@@ -26,6 +31,11 @@ function Quiz() {
         setSelectedAnswerIndex(null);
       } else {
         setShowScore(true);
+        toast.info(
+          `Quiz finalizado! Você acertou ${score + (isCorrect ? 1 : 0)} de ${
+            questions.length
+          } perguntas.`
+        );
       }
     }, 2000);
   };
@@ -55,7 +65,7 @@ function Quiz() {
             {questions[currentQuestion].answerOptions.map(
               (answerOption, index) => {
                 let buttonClass = "answer-button";
-                // Se o usuário já escolheu uma resposta, define as classes para feedback
+                // Se o usuário já escolheu uma resposta, aplica feedback visual
                 if (selectedAnswerIndex !== null) {
                   if (answerOption.isCorrect) {
                     buttonClass += " correct";
@@ -87,14 +97,7 @@ function Quiz() {
                 .isCorrect ? (
                 <p>Correto!</p>
               ) : (
-                <p>
-                  Incorreto! A resposta certa é:{" "}
-                  {
-                    questions[currentQuestion].answerOptions.find(
-                      (option) => option.isCorrect
-                    )?.answerText
-                  }
-                </p>
+                <p>Incorreto!</p>
               )}
             </div>
           )}

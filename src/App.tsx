@@ -53,7 +53,13 @@ function App() {
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/events" element={<Events />} />
       </Routes>
-      <ToastContainer autoClose={3000} position="top-right" />
+      <ToastContainer
+        autoClose={3000}
+        position="bottom-center"
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+      />
     </BrowserRouter>
   );
 }
