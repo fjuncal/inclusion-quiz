@@ -1,23 +1,24 @@
 // Forum.tsx
 import React, { useState, useEffect } from "react";
 import "./Forum.css";
+import ClearCommentsModal from "../components/ClearCommentsModal";
 
 interface Comment {
   id: number;
   name: string;
   text: string;
+  timestamp: number;
 }
 
 function Forum() {
-  // Inicializa os comentários a partir do localStorage, se houver
   const [comments, setComments] = useState<Comment[]>(() => {
     const saved = localStorage.getItem("forumComments");
     return saved ? JSON.parse(saved) : [];
   });
   const [name, setName] = useState("");
   const [text, setText] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Sempre que os comentários mudarem, atualiza o localStorage
   useEffect(() => {
     localStorage.setItem("forumComments", JSON.stringify(comments));
   }, [comments]);
@@ -28,11 +29,29 @@ function Forum() {
       id: Date.now(),
       name,
       text,
+      timestamp: Date.now(),
     };
-    // Adiciona o novo comentário no início da lista
     setComments([newComment, ...comments]);
     setName("");
     setText("");
+  };
+
+  const handleClearComments = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleModalConfirm = (password: string) => {
+    if (password === "minhaSenhaSecreta") {
+      setComments([]);
+      localStorage.removeItem("forumComments");
+      setIsModalOpen(false);
+    } else {
+      alert("Senha incorreta. Tente novamente.");
+    }
   };
 
   return (
@@ -58,11 +77,21 @@ function Forum() {
         />
         <button type="submit">Enviar Comentário</button>
       </form>
+      <button onClick={handleClearComments} className="clear-button">
+        Limpar Comentários
+      </button>
+      {isModalOpen && (
+        <ClearCommentsModal
+          onClose={handleModalClose}
+          onConfirm={handleModalConfirm}
+        />
+      )}
       <div className="comments-list">
         {comments.map((comment) => (
           <div key={comment.id} className="comment">
             <p>
-              <strong>{comment.name}</strong>
+              <strong>{comment.name}</strong>{" "}
+              <small>{new Date(comment.timestamp).toLocaleString()}</small>
             </p>
             <p>{comment.text}</p>
           </div>
