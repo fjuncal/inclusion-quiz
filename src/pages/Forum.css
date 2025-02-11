@@ -1,3 +1,5 @@
+/* Forum.css */
+
 .forum-container {
   padding: 1rem;
   max-width: 800px;
@@ -83,12 +85,21 @@
   font-size: 1rem;
 }
 
+/* Botão Responder - Modo Claro */
 .reply-button {
-  background: transparent;
+  background-color: #1a1a1a;
+  color: #fff;
   border: none;
-  color: #646cff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   margin-top: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.reply-button:hover {
+  background-color: #646cff;
+  transform: scale(1.05);
 }
 
 .reply-form {
@@ -127,6 +138,7 @@
   padding-left: 1rem;
 }
 
+/* Modo Escuro */
 body.theme-dark .forum-container {
   background-color: #121212;
   color: #e0e0e0;
@@ -163,8 +175,21 @@ body.theme-dark .comments-list .comment {
   color: #e0e0e0;
 }
 
+/* Botão Responder - Modo Escuro */
 body.theme-dark .reply-button {
-  color: #aaa;
+  background-color: #333;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.theme-dark .reply-button:hover {
+  background-color: #646cff;
+  transform: scale(1.05);
 }
 
 body.theme-dark .reply-form .reply-input,
