@@ -1,9 +1,10 @@
-/* Tips.css */
 .tips-container {
   padding: 1rem;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  background-color: #ffffff;
+  color: #333;
 }
 
 .tips-list {
@@ -20,15 +21,17 @@
   padding: 1rem;
   text-align: left;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tip-card h2 {
-  margin-top: 0;
-  font-size: 1.2rem;
   color: #333;
 }
 
-.tip-card p {
-  font-size: 1rem;
-  color: #555;
+body.theme-dark .tips-container {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.theme-dark .tip-card {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }

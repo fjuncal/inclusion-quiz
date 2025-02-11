@@ -1,9 +1,10 @@
-/* Stories.css */
 .stories-container {
   padding: 1rem;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+  background-color: #ffffff;
+  color: #333;
 }
 
 .stories-list {
@@ -20,19 +21,17 @@
   background-color: #f9f9f9;
   text-align: left;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.story-card h2 {
-  margin-top: 0;
   color: #333;
 }
 
-.story-card p {
-  margin: 0.5rem 0;
+body.theme-dark .stories-container {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-.story-card .author {
-  text-align: right;
-  font-style: italic;
-  color: #555;
+body.theme-dark .story-card {
+  background-color: #333;
+  border: 1px solid #555;
+  color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
