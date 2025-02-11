@@ -38,8 +38,10 @@ Para executar a aplicação localmente:
    ```bash
    git clone https://github.com/seu-usuario/inclusion-quiz.git
    cd inclusion-quiz
+
    Instale as dependências:
    npm install
+
    Inicie a aplicação:
    npm run dev
    ```
