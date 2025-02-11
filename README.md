@@ -1,50 +1,64 @@
-# React + TypeScript + Vite
+# Quiz de Inclusão
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **Quiz de Inclusão** é uma aplicação web interativa desenvolvida com **React**, **TypeScript** e **Vite** com o objetivo de promover a conscientização sobre diversidade e inclusão na área de tecnologia. A aplicação oferece um quiz interativo, um fórum com respostas encadeadas e curtidas, suporte a tema claro/escuro e notificações in-app, incentivando o engajamento e o aprendizado sobre esses temas.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Quiz Interativo:**  
+  Teste seus conhecimentos sobre diversidade e inclusão com feedback imediato, incluindo toasts de acerto e erro.
+- **Fórum de Discussão:**  
+  Participe de um fórum onde você pode enviar comentários, responder a outros usuários (respostas encadeadas) e curtir os comentários.
+- **Tema Claro/Escuro:**  
+  Visualização adaptável que permite alternar entre modos claro e escuro, melhorando a experiência de leitura.
+- **Notificações In-App:**  
+  Toasts informam o usuário sobre ações realizadas (como envio de comentários, curtidas, respostas e limpeza de comentários com verificação de senha).
 
-## Expanding the ESLint configuration
+- **Comentários Destaque:**  
+  Uma seção que exibe os comentários com mais curtidas para incentivar as contribuições mais relevantes.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tecnologias Utilizadas
 
-- Configure the top-level `parserOptions` property like this:
+- **React** com **TypeScript** – Desenvolvimento da interface do usuário.
+- **Vite** – Ferramenta de build e desenvolvimento rápido.
+- **React Toastify** – Notificações in-app elegantes.
+- **CSS** – Estilização responsiva com suporte a temas claro e escuro.
+- **LocalStorage** – Persistência de dados (comentários e respostas).
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Deploy
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+A aplicação está disponível em:  
+[https://inclusion-quiz.vercel.app/](https://inclusion-quiz.vercel.app/)
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Instalação
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Para executar a aplicação localmente:
+
+1. **Clone o repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/inclusion-quiz.git
+   cd inclusion-quiz
+   Instale as dependências:
+   ```
+
+bash
+Copiar
+npm install
+Inicie a aplicação:
+
+bash
+Copiar
+npm run dev
+Abra http://localhost:3000 no seu navegador para acessar a aplicação.
+
+Estrutura do Projeto
+src/
+components/ – Componentes reutilizáveis (por exemplo, NavBar, ClearCommentsModal).
+pages/ – Páginas principais (por exemplo, VideoSection, Quiz, Forum, etc.).
+utils/ – Dados e funções auxiliares (por exemplo, perguntas do quiz).
+public/ – Arquivos públicos, como index.html.
+Contribuição
+Contribuições são bem-vindas! Se você deseja colaborar, sinta-se à vontade para abrir issues ou enviar pull requests.
+
+Licença
+Este projeto está licenciado sob a Licença MIT.
