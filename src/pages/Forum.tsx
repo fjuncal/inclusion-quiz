@@ -8,12 +8,20 @@ interface Comment {
   name: string;
   text: string;
   timestamp: number;
+  likes: number;
 }
 
 function Forum() {
   const [comments, setComments] = useState<Comment[]>(() => {
     const saved = localStorage.getItem("forumComments");
-    return saved ? JSON.parse(saved) : [];
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      return parsed.map((comment: Comment) => ({
+        ...comment,
+        likes: comment.likes ?? 0,
+      }));
+    }
+    return [];
   });
   const [name, setName] = useState("");
   const [text, setText] = useState("");
@@ -31,6 +39,7 @@ function Forum() {
       name,
       text,
       timestamp: Date.now(),
+      likes: 0,
     };
     setComments([newComment, ...comments]);
     setName("");
@@ -59,6 +68,16 @@ function Forum() {
       setModalError("Senha incorreta. Tente novamente.");
       toast.error("Senha incorreta. Tente novamente.");
     }
+  };
+
+  const handleLike = (commentId: number) => {
+    const updatedComments = comments.map((comment) =>
+      comment.id === commentId
+        ? { ...comment, likes: (comment.likes || 0) + 1 }
+        : comment
+    );
+    setComments(updatedComments);
+    toast.info("Você curtiu esse comentário!");
   };
 
   return (
@@ -102,6 +121,16 @@ function Forum() {
               <small>{new Date(comment.timestamp).toLocaleString()}</small>
             </p>
             <p>{comment.text}</p>
+            <div className="comment-reactions">
+              <button
+                onClick={() => handleLike(comment.id)}
+                className="like-button"
+              >
+                {/* Alterado para um ícone de coração */}
+                ❤️
+              </button>
+              <span className="like-count">{comment.likes}</span>
+            </div>
           </div>
         ))}
       </div>
