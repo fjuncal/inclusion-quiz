@@ -54,7 +54,7 @@ function App() {
         <Route path="/events" element={<Events />} />
       </Routes>
       <ToastContainer
-        autoClose={3000}
+        autoClose={1200}
         position="bottom-center"
         hideProgressBar={false}
         closeOnClick
