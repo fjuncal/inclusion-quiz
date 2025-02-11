@@ -20,6 +20,9 @@ function NavBar() {
         <li>
           <Link to={"/stories"}>Histórias</Link>
         </li>
+        <li>
+          <Link to={"/tips"}>Dicas</Link>
+        </li>
       </ul>
     </nav>
   );
