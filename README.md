@@ -49,13 +49,13 @@ Para executar a aplicação localmente:
    cd inclusion-quiz
    ```
 
-   2.**Instale as dependências:**
+   2. **Instale as dependências:**
 
 ```bash
 npm install
 ```
 
-3.**Inicie a aplicação:**
+3. **Inicie a aplicação:**
 
 ```bash
 npm run
