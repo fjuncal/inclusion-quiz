@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import Timeline from "./pages/Timeline";
 import Forum from "./pages/Forum";
 import Statistics from "./pages/Statistics";
+import Events from "./pages/Events";
 
 function App() {
   // Carrega o tema do localStorage ou usa "dark" como padrão
@@ -45,6 +46,7 @@ function App() {
         <Route path="/timeline" element={<Timeline />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="/statistics" element={<Statistics />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
     </BrowserRouter>
   );

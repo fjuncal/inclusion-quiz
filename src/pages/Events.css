@@ -1,0 +1,80 @@
+/* Events.css */
+.events-container {
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espaçamento entre os cards */
+  margin-top: 1rem;
+}
+
+.event-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.event-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.event-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: #646cff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.event-link:hover {
+  background-color: #535bf2;
+}
+
+body.theme-dark .events-container {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.theme-dark .event-card {
+  background-color: #333;
+  border: 1px solid #555;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.theme-dark .event-date {
+  color: #aaa;
+}
+
+body.theme-dark .event-link {
+  background-color: #646cff;
+  color: #fff;
+}
+
+body.theme-dark .event-link:hover {
+  background-color: #535bf2;
+}
+body.theme-light .event-link {
+  background-color: #646cff;
+  color: #fff !important;
+}
