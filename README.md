@@ -41,15 +41,15 @@ Para executar a aplicação localmente:
    Instale as dependências:
    ```
 
-bash
-Copiar
+```bash
 npm install
 Inicie a aplicação:
+```
 
-bash
-Copiar
+```bash
 npm run dev
 Abra http://localhost:3000 no seu navegador para acessar a aplicação.
+```
 
 Estrutura do Projeto
 src/
