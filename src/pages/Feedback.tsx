@@ -1,5 +1,5 @@
-// Feedback.tsx
-import { useState } from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
 import "./Feedback.css";
 
 function Feedback() {
@@ -9,8 +9,8 @@ function Feedback() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Futuramente colocar uma chamada pra API
     setSubmitted(true);
+    toast.success("Feedback enviado com sucesso!");
   };
 
   return (

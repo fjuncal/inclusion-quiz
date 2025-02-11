@@ -1,4 +1,3 @@
-/* Events.css */
 .events-container {
   padding: 1rem;
   max-width: 800px;
@@ -11,7 +10,7 @@
 .events-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Espaçamento entre os cards */
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
