@@ -18,6 +18,7 @@ function Forum() {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalError, setModalError] = useState("");
 
   useEffect(() => {
     localStorage.setItem("forumComments", JSON.stringify(comments));
@@ -37,20 +38,24 @@ function Forum() {
   };
 
   const handleClearComments = () => {
+    setModalError("");
     setIsModalOpen(true);
   };
 
   const handleModalClose = () => {
     setIsModalOpen(false);
+    setModalError("");
   };
 
   const handleModalConfirm = (password: string) => {
+    // Substitua "minhaSenhaSecreta" pela senha desejada
     if (password === "minhaSenhaSecreta") {
       setComments([]);
       localStorage.removeItem("forumComments");
       setIsModalOpen(false);
+      setModalError("");
     } else {
-      alert("Senha incorreta. Tente novamente.");
+      setModalError("Senha incorreta. Tente novamente.");
     }
   };
 
@@ -84,6 +89,7 @@ function Forum() {
         <ClearCommentsModal
           onClose={handleModalClose}
           onConfirm={handleModalConfirm}
+          errorMessage={modalError}
         />
       )}
       <div className="comments-list">
