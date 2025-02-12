@@ -11,7 +11,7 @@ O **Quiz de Inclusão** é uma aplicação web interativa desenvolvida com **Rea
 ## Funcionalidades
 
 - **Quiz Interativo:**  
-  Teste seus conhecimentos sobre diversidade e inclusão com feedback imediato.
+  Teste seus conhecimentos sobre diversidade e inclusão com feedback imediato feito pelo usuário.
 
 - **Fórum de Discussão:**  
   Envie comentários, responda a outros usuários (respostas encadeadas) e curta os comentários.
